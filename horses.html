@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Horses - Ewa Faivre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home / Contact</a></li>
+                
+                <!-- Das Dropdown-Menü bleibt auf allen Seiten gleich -->
+                <li class="dropdown">
+                    <a href="horses.html" class="dropbtn">Horses ▾</a>
+                    <div class="dropdown-content">
+                        <a href="horse-1.html">Orion des Aubus</a>
+                        <a href="horse-2.html">Lizzy de l'Urière</a>
+                        <a href="horse-3.html">MISS'COLKAZ DU SOLEIL</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="horses-overview">
+            <h1>My Horses</h1>
+            <p>Click on a horse to learn more about them!</p>
+            
+            <div class="horses-grid">
+                
+                <!-- Kästchen 1: Orion -->
+                <a href="horse-1.html" class="horse-card">
+                    <img src="img/orion.jpg" alt="Orion des Aubus">
+                    <div class="card-info">
+                        <h2>Orion des Aubus</h2>
+                        <p><strong>Age:</strong> ?</p>
+                        <p><strong>Breed:</strong> ?</p>
+                        <p><strong>Specialty:</strong> Endurance Riding</p>
+                    </div>
+                </a>
+
+                <!-- Kästchen 2: Lizzy -->
+                <a href="horse-2.html" class="horse-card">
+                    <img src="img/lizzy-placeholder.jpg" alt="Lizzy de l'Urière">
+                    <div class="card-info">
+                        <h2>Lizzy de l'Urière</h2>
+                        <p><strong>Age:</strong> ?</p>
+                        <p><strong>Breed:</strong> ?</p>
+                        <p><strong>Specialty:</strong> Endurance Riding</p>
+                    </div>
+                </a>
+
+                <!-- Kästchen 3: Miss'Colkaz -->
+                <a href="horse-3.html" class="horse-card">
+                    <img src="img/miss.jpg" alt="MISS'COLKAZ DU SOLEIL">
+                    <div class="card-info">
+                        <h2>MISS'COLKAZ DU SOLEIL</h2>
+                        <p><strong>Age:</strong> ?</p>
+                        <p><strong>Breed:</strong> ?</p>
+                        <p><strong>Specialty:</strong> Endurance Riding</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

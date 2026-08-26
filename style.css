@@ -1,0 +1,276 @@
+/* Grundlegendes Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.nav-menu li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    color: #d35400; 
+}
+
+/* --- NEU: Dropdown (Ausklappmenü) Styling --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none; /* Versteckt das Menü standardmäßig */
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 220px; /* Breite des Ausklappmenüs */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    top: 100%;
+}
+
+.dropdown-content a {
+    color: #333 !important; /* Überschreibt die weiße Schriftfarbe vom Hauptmenü */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #d35400 !important;
+}
+
+/* Zeigt das Dropdown an, wenn man mit der Maus über das "Horses" li fährt */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* --- Hauptbereich --- */
+main {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* --- NEU: Kontakt Icons Styling --- */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-icon {
+    width: 60px; /* Größe der Bilder */
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Kleiner Zoom-Effekt, wenn man mit der Maus über das Bild fährt */
+.contact-icon:hover {
+    transform: scale(1.15); 
+}
+
+/* --- NEU: Styling für die Pferde-Übersicht (Cards) --- */
+
+.horses-grid {
+    display: grid;
+    /* Macht das Raster responsiv: Die Kästchen sind mindestens 300px breit, sonst passen sie sich an */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 0 1rem;
+}
+
+/* Das Kästchen (wird als Link genutzt) */
+.horse-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; /* Damit das Bild oben die runden Ecken übernimmt */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-decoration: none; /* Entfernt die Unterstreichung des Links */
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Effekt, wenn man mit der Maus über das Kästchen fährt (es hebt sich leicht an) */
+.horse-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+/* Das Bild innerhalb des Kästchens */
+.horse-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Schneidet das Bild perfekt zu, ohne es zu verzerren */
+}
+
+/* Der Textbereich im Kästchen */
+.card-info {
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.card-info h2 {
+    margin-bottom: 0.8rem;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.card-info p {
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+.card-info strong {
+    color: #2c3e50; /* Hebt die Labels wie "Age:" farblich leicht hervor */
+}
+
+/* --- NEU: Individuelle Pferdeseite (horse-1.html) --- */
+
+.horse-profile {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.horse-profile h1 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Karussell Styling --- */
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    height: 450px;
+    margin: 0 auto 3rem auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carousel-slide {
+    display: none; /* Versteckt alle Bilder standardmäßig */
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide.active {
+    display: block; /* Zeigt nur das aktive Bild */
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Schneidet Bilder perfekt zu */
+}
+
+/* Karussell Knöpfe */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+/* --- Beschreibung --- */
+.horse-description {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.horse-description h2 {
+    color: #d35400;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+}
+
+/* --- Stammbaum (Pedigree) --- */
+.pedigree-section {
+    text-align: left;
+    margin-top: 3rem;
+}
+
+.pedigree-section h2 {
+    color: #d35400;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+}
+
+.pedigree-img {
+    width: 100%;
+    max-width: 800px; /* Damit das Bild auf großen Bildschirmen nicht riesig wird */
+    height: auto; /* Behält die originalen Proportionen bei */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Dezenter Schatten */
+    display: block;
+    margin: 0 auto; /* Zentriert das Bild, falls es kleiner als die volle Breite ist */
+}
