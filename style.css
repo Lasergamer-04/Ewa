@@ -411,7 +411,7 @@ p {
 
 .hero-section {
     /* Der Farbverlauf: Links 100% Schwarz, zur Mitte hin halbdurchsichtig, Rechts komplett durchsichtig */
-    background-image: linear-gradient(to right, #000000 20%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0) 100%), url('img/Hero.png');
+    background-image: linear-gradient(to right, #000000 20%, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0) 100%), url('img/Hero.png');
     background-size: cover;
     background-position:center right; /* Schiebt das Bild leicht nach rechts, damit das Pferd gut sichtbar ist */
     min-height: 85vh; /* Nimmt 85% der Bildschirmhöhe ein */
