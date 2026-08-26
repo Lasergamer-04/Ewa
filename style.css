@@ -500,7 +500,7 @@ p {
 @media (max-width: 768px) {
     .hero-section {
         /* Auf Handys machen wir den Schatten von unten nach oben statt von links nach rechts */
-        background-image: linear-gradient(to top, #000000 40%, rgba(0,0,0,0.6) 100%), url('img/Hero.jpg');
+        background-image: linear-gradient(to top, #000000 40%, rgba(0,0,0,0.6) 100%), url('img/Hero.png');
         padding: 2rem;
         justify-content: center;
         text-align: center;
