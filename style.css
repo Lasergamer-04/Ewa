@@ -7,15 +7,17 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #121212; /* Sehr dunkler Hintergrund (fast schwarz) */
+    color: #e0e0e0; /* Helle Schrift für gute Lesbarkeit */
     line-height: 1.6;
 }
 
 header {
-    background-color: #2c3e50;
+    background-color: #000000; /* Tiefschwarzer Header */
     padding: 1.5rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* Ein zarter goldener Schatten unter dem Menü */
+    box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); 
+    border-bottom: 2px solid #d4af37; /* Goldene Trennlinie */
 }
 
 .nav-menu {
@@ -26,30 +28,33 @@ header {
 }
 
 .nav-menu li a {
-    color: #ecf0f1;
+    color: #f1f1f1;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
     padding: 10px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
+/* Goldener Hover-Effekt im Menü */
 .nav-menu li a:hover {
-    color: #d35400; 
+    color: #d4af37; 
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.4); /* Leichtes Leuchten */
 }
 
-/* --- NEU: Dropdown (Ausklappmenü) Styling --- */
+/* --- Dropdown (Ausklappmenü) Styling --- */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
 .dropdown-content {
-    display: none; /* Versteckt das Menü standardmäßig */
+    display: none;
     position: absolute;
-    background-color: #ffffff;
-    min-width: 220px; /* Breite des Ausklappmenüs */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color: #1a1a1a; /* Dunkelgraues Menü */
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+    border: 1px solid #d4af37; /* Goldener Rahmen */
     z-index: 1;
     border-radius: 8px;
     overflow: hidden;
@@ -57,20 +62,19 @@ header {
 }
 
 .dropdown-content a {
-    color: #333 !important; /* Überschreibt die weiße Schriftfarbe vom Hauptmenü */
+    color: #e0e0e0 !important;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     font-size: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #333;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
-    color: #d35400 !important;
+    background-color: #000000;
+    color: #d4af37 !important;
 }
 
-/* Zeigt das Dropdown an, wenn man mit der Maus über das "Horses" li fährt */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -83,13 +87,14 @@ main {
 
 h1 {
     margin-bottom: 1rem;
+    color: #d4af37; /* Hauptüberschriften in Gold */
 }
 
 p {
     margin-bottom: 1rem;
 }
 
-/* --- NEU: Kontakt Icons Styling --- */
+/* --- Kontakt Icons Styling --- */
 .contact-links {
     display: flex;
     justify-content: center;
@@ -98,55 +103,54 @@ p {
 }
 
 .contact-icon {
-    width: 60px; /* Größe der Bilder */
+    width: 60px;
     height: 60px;
     object-fit: contain;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    /* Optional: Macht die Icons leicht golden (falls es transparente PNGs sind) */
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.2));
 }
 
-/* Kleiner Zoom-Effekt, wenn man mit der Maus über das Bild fährt */
 .contact-icon:hover {
     transform: scale(1.15); 
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
 }
 
-/* --- NEU: Styling für die Pferde-Übersicht (Cards) --- */
-
+/* --- Styling für die Pferde-Übersicht (Cards) --- */
 .horses-grid {
     display: grid;
-    /* Macht das Raster responsiv: Die Kästchen sind mindestens 300px breit, sonst passen sie sich an */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
     padding: 0 1rem;
 }
 
-/* Das Kästchen (wird als Link genutzt) */
 .horse-card {
-    background-color: #ffffff;
+    background-color: #1a1a1a; /* Dunkelgraue Kästchen */
     border-radius: 12px;
-    overflow: hidden; /* Damit das Bild oben die runden Ecken übernimmt */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    text-decoration: none; /* Entfernt die Unterstreichung des Links */
-    color: #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border: 1px solid #333; /* Dezenter Rahmen */
+    text-decoration: none;
+    color: #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     display: flex;
     flex-direction: column;
 }
 
-/* Effekt, wenn man mit der Maus über das Kästchen fährt (es hebt sich leicht an) */
+/* Goldener Rahmen und Schatten beim Hovern */
 .horse-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 12px 20px rgba(212, 175, 55, 0.2);
+    border-color: #d4af37;
 }
 
-/* Das Bild innerhalb des Kästchens */
 .horse-card img {
     width: 100%;
     height: 250px;
-    object-fit: cover; /* Schneidet das Bild perfekt zu, ohne es zu verzerren */
+    object-fit: cover;
 }
 
-/* Der Textbereich im Kästchen */
 .card-info {
     padding: 1.5rem;
     text-align: left;
@@ -154,123 +158,224 @@ p {
 
 .card-info h2 {
     margin-bottom: 0.8rem;
-    color: #2c3e50;
+    color: #d4af37; /* Name des Pferdes in Gold */
     font-size: 1.4rem;
 }
 
 .card-info p {
     margin-bottom: 0.3rem;
     font-size: 1rem;
-    color: #555;
+    color: #bbb;
 }
 
 .card-info strong {
-    color: #2c3e50; /* Hebt die Labels wie "Age:" farblich leicht hervor */
+    color: #d4af37; /* Labels wie "Born:" in Gold */
 }
 
-/* --- NEU: Individuelle Pferdeseite (horse-1.html) --- */
-
+/* --- Individuelle Pferdeseite --- */
 .horse-profile {
     max-width: 900px;
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #1a1a1a;
     padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    border: 1px solid #333;
 }
 
 .horse-profile h1 {
-    color: #2c3e50;
+    color: #d4af37;
     font-size: 2.2rem;
     margin-bottom: 2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* --- Karussell Styling --- */
-.carousel-container {
-    position: relative;
-    max-width: 100%;
+/* Fixes Hauptbild (Hero Image) */
+.hero-img {
+    width: 100%;
     height: 450px;
-    margin: 0 auto 3rem auto;
+    object-fit: cover;
     border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+    border: 2px solid #333;
+    margin-bottom: 2rem;
+    display: block;
 }
 
-.carousel-slide {
-    display: none; /* Versteckt alle Bilder standardmäßig */
-    width: 100%;
-    height: 100%;
-}
-
-.carousel-slide.active {
-    display: block; /* Zeigt nur das aktive Bild */
-}
-
-.carousel-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Schneidet Bilder perfekt zu */
-}
-
-/* Karussell Knöpfe */
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    font-size: 1.5rem;
-    border-radius: 50%;
-    transition: background-color 0.3s;
-}
-
-.carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.carousel-btn.prev {
-    left: 10px;
-}
-
-.carousel-btn.next {
-    right: 10px;
-}
-
-/* --- Beschreibung --- */
+/* --- Beschreibung, Galerie, Pedigree & Dokumente (Überschriften) --- */
 .horse-description {
     text-align: left;
     margin-bottom: 3rem;
 }
 
-.horse-description h2 {
-    color: #d35400;
+.horse-description h2, 
+.pedigree-section h2, 
+.gallery-section h2, 
+.documents-section h2 {
+    color: #d4af37; /* Alle Bereichs-Überschriften in Gold */
     margin-bottom: 1rem;
-    border-bottom: 2px solid #ecf0f1;
+    border-bottom: 1px solid #333; /* Dunkle Trennlinie */
     padding-bottom: 0.5rem;
 }
 
-/* --- Stammbaum (Pedigree) --- */
+.horse-description h3 {
+    color: #f1f1f1; /* Weiße Unter-Überschriften */
+    margin: 2rem 0 1rem 0;
+    font-size: 1.2rem;
+}
+
+/* Listen Styling */
+.custom-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+}
+
+.custom-list li::before {
+    content: "•";
+    color: #d4af37; /* Goldene Aufzählungspunkte */
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.suitability-note {
+    font-style: italic;
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.rating-list {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+}
+
+.rating-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333; /* Dunkle Trennlinie */
+    color: #e0e0e0;
+    font-weight: 500;
+}
+
+.rating-list li:last-child {
+    border-bottom: none;
+}
+
+.rating-list .stars {
+    letter-spacing: 2px;
+    /* Optional: Macht die Emojis etwas goldener */
+    filter: sepia(1) saturate(5) hue-rotate(5deg); 
+}
+
+/* --- Stammbaum (Pedigree) als Bild --- */
 .pedigree-section {
     text-align: left;
     margin-top: 3rem;
 }
 
-.pedigree-section h2 {
-    color: #d35400;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid #ecf0f1;
-    padding-bottom: 0.5rem;
-}
-
 .pedigree-img {
     width: 100%;
-    max-width: 800px; /* Damit das Bild auf großen Bildschirmen nicht riesig wird */
-    height: auto; /* Behält die originalen Proportionen bei */
+    max-width: 800px;
+    height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Dezenter Schatten */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.8);
+    border: 1px solid #444; /* Leichter Rahmen für das Bild */
     display: block;
-    margin: 0 auto; /* Zentriert das Bild, falls es kleiner als die volle Breite ist */
+    margin: 0 auto;
+}
+
+/* --- Galerie für Fotos und Videos --- */
+.gallery-section {
+    margin-top: 4rem;
+    text-align: left;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-grid img,
+.gallery-grid video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+    border-color: #d4af37; /* Goldener Rahmen beim Hovern */
+    cursor: zoom-in;
+}
+
+/* --- Dokumenten-Sektion (Downloads) --- */
+.documents-section {
+    margin-top: 4rem;
+    text-align: left;
+    background-color: #111; /* Sehr dunkler Hintergrund für den Kasten */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid #d4af37; /* Goldener Kasten-Rahmen */
+}
+
+.document-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.download-btn {
+    background-color: #d4af37; /* Goldener Button */
+    color: #000; /* Schwarze Schrift auf Gold */
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #f3d578; /* Helleres Gold beim Hovern */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+    color: #000;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Hintergrundbild mit dunklem Filter */
+    background-image: linear-gradient(rgba(18, 18, 18, 0.88), rgba(18, 18, 18, 0.88)), url('img/background.png');
+    
+    /* NEU: Bild wird komplett angezeigt, aber nicht wiederholt */
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    
+    background-position: center; 
+    background-attachment: fixed; 
+    background-color: #121212; /* Füllt den leeren Raum um das Bild herum auf */
+    
+    color: #e0e0e0;
+    line-height: 1.6;
 }
