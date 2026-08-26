@@ -9,11 +9,17 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="navbar">
+            <!-- NEU: Das Logo oben links -->
+            <a href="index.html" class="logo-link">
+                <!-- Ersetze "logo.png" durch den Namen deines Bildes -->
+                <img src="img/background.png" alt="Ewa Faivre Logo" class="nav-logo">
+            </a>
+            
+            <!-- Das bestehende Menü (rutscht jetzt nach rechts) -->
             <ul class="nav-menu">
                 <li><a href="index.html">Home / Contact</a></li>
                 
-                <!-- Das ist das neue Dropdown-Menü -->
                 <li class="dropdown">
                     <a href="horses.html" class="dropbtn">Horses ▾</a>
                     <div class="dropdown-content">
@@ -26,11 +32,30 @@
         </nav>
     </header>
 
+    <!-- NEUER HERO-BEREICH WIE AUF DEM SCREENSHOT -->
     <main class="home-main">
-        <section id="home">
-            <h1>Hey there, Welcome to my website</h1>
-            <p>My Name is Ewa Faivre, im based in Riga, Latvia</p>
-            <p>Feel free to look around and discover my horses!</p>
+        <section class="hero-section">
+            <div class="hero-content">
+                
+                <h1 class="hero-title">
+                    <span class="gold-serif">ARABIAN</span><br>
+                    <span class="gold-serif">HORSES</span><br>
+                    <span class="white-sans">FOR ENDURANCE</span>
+                </h1>
+                
+                <div class="hero-ornament">&#x2756;</div> <!-- Kleines Rauten-Symbol -->
+                
+                <p class="hero-keywords">QUALITY &bull; ATHLETICISM &bull; PARTNERSHIP</p>
+                
+                <p class="hero-description">
+                    Selected, trained and cared for with<br>
+                    passion to perform together<br>
+                    over any distance.
+                </p>
+                
+                <a href="horses.html" class="hero-button">DISCOVER OUR HORSES &rarr;</a>
+                
+            </div>
         </section>
     </main>
 

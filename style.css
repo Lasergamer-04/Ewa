@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Montserrat:wght@300;400;600&display=swap');
+
 /* Grundlegendes Reset */
 * {
     margin: 0;
@@ -9,11 +11,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
     /* Hintergrundbild mit dunklem, halbdurchsichtigem Filter für das Wasserzeichen */
-    background-image: linear-gradient(rgba(18, 18, 18, 0.75), rgba(18, 18, 18, 0.75)), url('img/background.png');
-    background-size: contain; 
-    background-repeat: no-repeat; 
-    background-position: center; 
-    background-attachment: fixed; 
     background-color: #121212; /* Sehr dunkler Hintergrund (fast schwarz) */
     
     color: #e0e0e0; /* Helle Schrift für gute Lesbarkeit */
@@ -25,18 +22,39 @@ body {
     min-height: 100vh;
 }
 
-/* --- HEADER: Bleibt komplett in Schwarz und Gold --- */
+/* --- HEADER --- */
 header {
     background-color: #000000;
-    padding: 1.5rem 0;
+    padding: 1rem 0; /* Etwas weniger Padding, damit das Logo gut passt */
     box-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); 
     border-bottom: 2px solid #d4af37;
+}
+
+/* NEU: Flexbox sorgt dafür, dass das Logo links und das Menü rechts ist */
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 3rem; /* Abstand zum linken und rechten Rand */
+    max-width: 1400px; /* Begrenzt die Breite auf riesigen Bildschirmen */
+    margin: 0 auto; /* Zentriert die Leiste */
+}
+
+/* NEU: Logo-Größe und Hover-Effekt */
+.nav-logo {
+    height: 50px; /* Passe diese Zahl an, falls dein Logo größer/kleiner sein soll */
+    width: auto;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05); /* Leichter Zoom beim Darüberfahren */
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 3rem;
 }
 
@@ -133,12 +151,16 @@ p {
     height: 45px;
     object-fit: contain;
     transition: transform 0.3s ease, filter 0.3s ease;
-    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.2)); /* Leichter goldener Schimmer */
+    
+    /* DER MAGISCHE FILTER: Macht jedes bunte Logo komplett Gold (#d4af37) */
+    filter: brightness(0) saturate(100%) invert(70%) sepia(38%) saturate(546%) hue-rotate(5deg) brightness(94%) contrast(88%);
 }
 
 .contact-icon:hover {
     transform: scale(1.15); 
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6)); /* Stärkeres Gold-Leuchten beim Hovern */
+    
+    /* Beim Hovern wird das Gold etwas heller und bekommt ein goldenes Leuchten */
+    filter: brightness(0) saturate(100%) invert(85%) sepia(30%) saturate(600%) hue-rotate(5deg) brightness(100%) contrast(90%) drop-shadow(0 0 10px rgba(212, 175, 55, 0.8));
 }
 
 /* --- Styling für die Pferde-Übersicht (Cards) --- */
@@ -383,4 +405,117 @@ p {
 /* Fokussiert das Bild auf den unteren Rand (z. B. für Beine/Hufe) */
 .focus-bottom {
     object-position: bottom;
+}
+
+/* --- NEU: HERO BEREICH (Startseite wie Screenshot) --- */
+
+.hero-section {
+    /* Der Farbverlauf: Links 100% Schwarz, zur Mitte hin halbdurchsichtig, Rechts komplett durchsichtig */
+    background-image: linear-gradient(to right, #000000 20%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0) 100%), url('img/Hero.png');
+    background-size: cover;
+    background-position:center right; /* Schiebt das Bild leicht nach rechts, damit das Pferd gut sichtbar ist */
+    min-height: 85vh; /* Nimmt 85% der Bildschirmhöhe ein */
+    display: flex;
+    align-items: center; /* Zentriert den Text vertikal */
+    padding: 0 5rem; /* Abstand vom linken Rand */
+    border-bottom: 2px solid #d4af37;
+}
+
+.hero-content {
+    max-width: 650px;
+    text-align: left; /* Text ist linksbündig wie im Layout */
+}
+
+/* Der große Titel */
+.hero-title {
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.gold-serif {
+    font-family: 'Cinzel', serif; /* Die edle Google-Schriftart */
+    font-size: 5rem; /* Riesige Schriftgröße */
+    font-weight: 500;
+    color: #d4af37;
+}
+
+.white-sans {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #e0e0e0;
+    letter-spacing: 6px; /* Zieht die Buchstaben weit auseinander */
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Das Rauten-Symbol */
+.hero-ornament {
+    color: #d4af37;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Die Keywords unter dem Titel */
+.hero-keywords {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: #cccccc;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+}
+
+/* Der Beschreibungs-Text */
+.hero-description {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    color: #a0a0a0;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 3rem;
+}
+
+/* Der Button */
+.hero-button {
+    display: inline-block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #d4af37; /* Goldene Schrift */
+    text-decoration: none;
+    letter-spacing: 2px;
+    padding: 1.2rem 2.5rem;
+    border: 1px solid #d4af37; /* Dünner Gold-Rahmen */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover Effekt */
+.hero-button:hover {
+    background-color: #d4af37;
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+/* Anpassung für Handys (damit der Text nicht das ganze Pferd verdeckt) */
+@media (max-width: 768px) {
+    .hero-section {
+        /* Auf Handys machen wir den Schatten von unten nach oben statt von links nach rechts */
+        background-image: linear-gradient(to top, #000000 40%, rgba(0,0,0,0.6) 100%), url('img/Hero.jpg');
+        padding: 2rem;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .hero-content {
+        text-align: center;
+    }
+    
+    .gold-serif {
+        font-size: 3rem; /* Etwas kleiner auf dem Handy */
+    }
+    
+    .white-sans {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
 }
