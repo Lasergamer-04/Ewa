@@ -18,15 +18,10 @@
             
             <!-- Das bestehende Menü (rutscht jetzt nach rechts) -->
             <ul class="nav-menu">
-                <li><a href="index.html">Home / Contact</a></li>
+                <li><a href="index.html">Home</a></li>
                 
-                <li class="dropdown">
-                    <a href="horses.html" class="dropbtn">Horses ▾</a>
-                    <div class="dropdown-content">
-                        <a href="horse-1.html">Orion des Aubus</a>
-                        <a href="horse-2.html">Lizzy de l'Urière</a>
-                        <a href="horse-3.html">Miss'Colkaz du Soleil</a>
-                    </div>
+                <li>
+                    <a href="horses.html">Horses</a>
                 </li>
             </ul>
         </nav>
@@ -42,6 +37,11 @@
             <div class="horse-description">
                 <h2>About Lizzy</h2>
                 <!-- BESCHREIBUNG -->
+                <h3>Qualified:</h3>
+                <ul class="custom-list">
+                    <li>22km Endurance (05.09.2026)</li>
+                </ul>
+
                 <p>She has great gaits and an incredible pedigree including <strong>Ismael de l'Urière</strong> (French stallion, CEI qualified), son of <strong>Craklin Hotspots (USA)</strong>, and also including strong Egyptian blood as well as names which are well known within traditional Spanish Arabian breeding.</p>
 
                 <h3>Strengths of this pedigree</h3>
@@ -105,7 +105,11 @@
                     
                     <!-- Beispiel für ein Video (MP4) -->
                     <video controls>
-                        <source src="vid/lizzy-video.mp4" type="video/mp4">
+                        <source src="vid/lizzy-video1.mp4" type="video/mp4">
+                        Dein Browser unterstützt keine Videos.
+                    </video>
+                    <video controls>
+                        <source src="vid/lizzy-video2.mp4" type="video/mp4">
                         Dein Browser unterstützt keine Videos.
                     </video>
                 </div>
@@ -113,6 +117,31 @@
             
         </section>
     </main>
+
+    <footer class="contact-footer">
+        <p>Contact me:</p>
+        <div class="contact-links">
+            <!-- Instagram -->
+            <a href="https://instagram.com/ewafvr" target="_blank" title="Instagram">
+                <img src="img/insta.png" alt="Instagram" class="contact-icon">
+            </a>
+            
+            <!-- Facebook -->
+            <a href="https://facebook.com/ewafvr" target="_blank" title="Facebook">
+                <img src="img/facebook.png" alt="Facebook" class="contact-icon">
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/37120631526" target="_blank" title="WhatsApp">
+                <img src="img/whatsapp.png" alt="WhatsApp" class="contact-icon">
+            </a>
+
+            <!-- E-Mail -->
+            <a href="mailto:ewafaivre@gmail.com" title="E-Mail">
+                <img src="img/mail.png" alt="E-Mail" class="contact-icon">
+            </a>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

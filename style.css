@@ -40,16 +40,12 @@ header {
     margin: 0 auto; /* Zentriert die Leiste */
 }
 
-/* NEU: Logo-Größe und Hover-Effekt */
+/* NEU: Logo-Größe */
 .nav-logo {
-    height: 50px; /* Passe diese Zahl an, falls dein Logo größer/kleiner sein soll */
+    height: 100px; /* Passe diese Zahl an, falls dein Logo größer/kleiner sein soll */
     width: auto;
     transition: transform 0.3s ease;
     display: block;
-}
-
-.nav-logo:hover {
-    transform: scale(1.05); /* Leichter Zoom beim Darüberfahren */
 }
 
 .nav-menu {
@@ -63,49 +59,13 @@ header {
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1rem;
-    padding: 10px;
+    padding: 0px;
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
 .nav-menu li a:hover {
     color: #d4af37; 
     text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #1a1a1a;
-    min-width: 220px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
-    border: 1px solid #d4af37;
-    z-index: 1;
-    border-radius: 8px;
-    overflow: hidden;
-    top: 100%;
-}
-
-.dropdown-content a {
-    color: #e0e0e0 !important;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    font-size: 1rem;
-    border-bottom: 1px solid #333;
-}
-
-.dropdown-content a:hover {
-    background-color: #000000;
-    color: #d4af37 !important;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 /* --- HAUPTBEREICH --- */
