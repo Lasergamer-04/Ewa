@@ -456,11 +456,12 @@ p {
     transform: translateY(-2px);
 }
 
-/* Anpassung für Handys (damit der Text nicht das ganze Pferd verdeckt) */
+/* Anpassung für Handys (erhöhter Kontrast & Bilder rechts zentriert) */
 @media (max-width: 768px) {
     .hero-section {
-        /* Auf Handys machen wir den Schatten von unten nach oben statt von links nach rechts */
-        background-image: linear-gradient(to top, #000000 40%, rgba(0,0,0,0.6) 100%), url('img/Hero.png');
+        background-image: linear-gradient(to top, #000000 60%, rgba(0,0,0,0.85) 100%), url('img/Hero.png');
+        /* NEU: Zwingt das Startseiten-Bild auf dem Handy an den rechten Rand */
+        background-position: center right; 
         padding: 2rem;
         justify-content: center;
         text-align: center;
@@ -471,11 +472,24 @@ p {
     }
     
     .gold-serif {
-        font-size: 3rem; /* Etwas kleiner auf dem Handy */
+        font-size: 3rem; 
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
     }
     
     .white-sans {
         font-size: 1.2rem;
         letter-spacing: 3px;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.9);
+    }
+
+    .hero-description {
+        color: #ffffff;
+        font-weight: 400;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+    }
+
+    /* NEU: Zwingt die großen Profilbilder auf den Pferdeseiten an den rechten Rand */
+    .hero-img {
+        object-position: right center; 
     }
 }
