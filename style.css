@@ -30,6 +30,42 @@ header {
     border-bottom: 2px solid #d4af37;
 }
 
+.textbox{
+    background-color: #000;
+}
+.about-me{
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+}
+.about-me p{
+    text-align: left;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    color: white;
+    font-size: large;
+}
+
+.container{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 3rem;
+}
+
+.box-1{
+    flex: 3;
+}
+
+.box-2{
+    flex: 1;
+}
+
+.box-2 img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* NEU: Flexbox sorgt dafür, dass das Logo links und das Menü rechts ist */
 .navbar {
     display: flex;
@@ -130,6 +166,15 @@ p {
     gap: 2rem;
     margin-top: 3rem;
     padding: 0 1rem;
+    display: flexbox;
+}
+
+.horses-grid-sold {
+    display: grid;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 0 30rem;
+    text-align: center;
 }
 
 .horse-card {
@@ -456,11 +501,64 @@ p {
     transform: translateY(-2px);
 }
 
+/* --- HAMBURGER MENU (Standardmäßig versteckt) --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #d4af37; /* Gold passend zum Theme */
+    transition: all 0.3s ease;
+}
+
 /* Anpassung für Handys (erhöhter Kontrast & Bilder rechts zentriert) */
+/* Anpassung für Handys */
 @media (max-width: 768px) {
+    /* Hamburger Menü auf Handys anzeigen */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Das Menü wird ausgeblendet und an die Seite geschoben */
+    .nav-menu {
+        position: absolute;
+        top: 100px; /* Höhe unter dem Header */
+        left: -100%; /* Versteckt es links außerhalb des Bildschirms */
+        flex-direction: column;
+        background-color: #000000;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease;
+        padding: 2rem 0;
+        border-bottom: 2px solid #d4af37;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.8);
+        z-index: 1000;
+    }
+
+    /* Diese Klasse wird per JavaScript hinzugefügt, um das Menü aufzuklappen */
+    .nav-menu.active {
+        left: 0;
+    }
+
+    /* Animation für das Hamburger-Icon zu einem "X" */
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* Restliche bestehende Media-Query Formatierungen... */
     .hero-section {
         background-image: linear-gradient(to top, #000000 60%, rgba(0,0,0,0.85) 100%), url('img/Hero.png');
-        /* NEU: Zwingt das Startseiten-Bild auf dem Handy an den rechten Rand */
         background-position: center right; 
         padding: 2rem;
         justify-content: center;
@@ -488,8 +586,46 @@ p {
         text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
     }
 
-    /* NEU: Zwingt die großen Profilbilder auf den Pferdeseiten an den rechten Rand */
     .hero-img {
         object-position: right center; 
+    }
+
+    /* --- BESSERE RESPONSIVENESS FÜR DIE ABOUT-SEITE --- */
+    
+    /* Elemente untereinander stapeln statt nebeneinander */
+    .container {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Bilder nehmen auf dem Handy die volle Breite ein */
+    .box-2 {
+        width: 100%;
+    }
+
+    .box-2 img {
+        width: 100%;
+        border-radius: 8px; /* Leichte Rundung sieht auf Mobile oft besser aus */
+    }
+
+    /* Entfernt die riesigen Seitenränder (3rem) beim Text auf kleinen Bildschirmen */
+    .about-me p {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1rem; /* Leicht verkleinert für bessere Lesbarkeit auf kleinen Displays */
+        text-align: left;
+    }
+
+    /* --- ALLGEMEINE PLATZOPTIMIERUNGEN FÜR HANDYS --- */
+    
+    /* Weniger Rand in der Navigationsleiste, damit Logo und Hamburger-Menü mehr Platz haben */
+    .navbar {
+        padding: 0 1.5rem;
+    }
+
+    /* Repariert das Sold-Horses Grid auf dem Handy (die 30rem Padding zerschießen das Layout) */
+    .horses-grid-sold {
+        padding: 0 1rem;
     }
 }

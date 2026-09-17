@@ -47,3 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+// Öffnet und schließt das Menü beim Klick auf den Hamburger
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+});
+
+// Schließt das Menü automatisch, wenn ein Link angeklickt wird
+document.querySelectorAll(".nav-menu li a").forEach(link => {
+    link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    });
+});
