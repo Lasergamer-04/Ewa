@@ -161,20 +161,28 @@ p {
 
 /* --- Styling für die Pferde-Übersicht (Cards) --- */
 .horses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap; /* Erlaubt Umbrüche, falls später mehr Pferde dazukommen */
+    justify-content: center; /* Das ist der Befehl, der alles perfekt zentriert */
     gap: 2rem;
     margin-top: 3rem;
-    padding: 0 1rem;
-    display: flexbox;
+    padding: 0 2rem; /* Ein normaler Rand für alle Bildschirmgrößen */
 }
 
+
 .horses-grid-sold {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap; /* Erlaubt Umbrüche, falls später mehr Pferde dazukommen */
+    justify-content: center; /* Das ist der Befehl, der alles perfekt zentriert */
     gap: 2rem;
     margin-top: 3rem;
-    padding: 0 30rem;
-    text-align: center;
+    padding: 0 2rem; /* Ein normaler Rand für alle Bildschirmgrößen */
+}
+
+/* Begrenzt die Breite der Karte, damit sie zentriert gut aussieht */
+.horses-grid-sold .horse-card {
+    width: 100%;
+    max-width: 350px;
 }
 
 .horse-card {
