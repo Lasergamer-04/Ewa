@@ -524,6 +524,101 @@ p {
     transition: all 0.3s ease;
 }
 
+/* --- CALENDAR / EVENTS PAGE --- */
+.calendar-main {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 2rem;
+}
+
+.events-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.event-card {
+    display: flex;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    border-color: #d4af37;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+}
+
+.event-date {
+    background-color: #d4af37;
+    color: #000000;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    border-right: 2px solid #000;
+}
+
+.event-date .day {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.event-date .month {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 0.5rem;
+}
+
+.event-info {
+    padding: 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.event-info h2 {
+    color: #d4af37;
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.event-location {
+    color: #e0e0e0;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.event-description {
+    color: #bbb;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
 /* Anpassung für Handys (erhöhter Kontrast & Bilder rechts zentriert) */
 /* Anpassung für Handys */
 @media (max-width: 768px) {
@@ -635,5 +730,26 @@ p {
     /* Repariert das Sold-Horses Grid auf dem Handy (die 30rem Padding zerschießen das Layout) */
     .horses-grid-sold {
         padding: 0 1rem;
+    }
+
+    /* Handy-Anpassung für die Event-Karten */
+    .event-card {
+        flex-direction: column; /* Datum rutscht nach oben, Text nach unten */
+    }
+    
+    .event-date {
+        padding: 1rem;
+        min-width: auto;
+        border-right: none;
+        border-bottom: 2px solid #000;
+    }
+    
+    .event-date .day {
+        font-size: 2.2rem;
+    }
+    
+    .event-info {
+        padding: 1.5rem;
+        text-align: center; /* Zentriert den Text auf dem Handy */
     }
 }
